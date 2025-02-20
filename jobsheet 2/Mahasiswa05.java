@@ -5,6 +5,9 @@ public class Mahasiswa05 {
     String kelas ;
     double ipk;
 
+    public Mahasiswa05 () {
+        
+    }
     void tampikanInformasi () {
         System.out.println("Nama :" +nama);
         System.out.println("NIM :" + NIM);
@@ -35,9 +38,6 @@ public class Mahasiswa05 {
         }
     } 
 
-    public Mahasiswa05 () {
-
-    }
 
     public  Mahasiswa05 (String nm, String nim, double ipk,String kls) {
         nama = nm;
