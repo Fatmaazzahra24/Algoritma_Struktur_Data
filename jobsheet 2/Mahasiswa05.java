@@ -33,6 +33,17 @@ public class Mahasiswa05 {
         } else {
           return  "IPK tidak valid! harus berada direntang 0.0  sampai 4.0";   
         }
+    } 
+
+    public Mahasiswa05 () {
+
+    }
+
+    public  Mahasiswa05 (String nm, String nim, double ipk,String kls) {
+        nama = nm;
+        this.NIM = nim;
+        this.ipk = ipk;
+        kelas = kls;
     }
 
 }
