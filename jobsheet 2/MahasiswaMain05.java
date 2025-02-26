@@ -1,6 +1,7 @@
 public class MahasiswaMain05 {
     public static void main(String[] args) {
-        
+       
+        Mahasiswa05 [] mhsArray = new  Mahasiswa05 [8] ;
         Mahasiswa05 mhs1 = new Mahasiswa05();
         mhs1.nama = "Muhammad Ali Farhan";
         mhs1.NIM = "2241720171";
