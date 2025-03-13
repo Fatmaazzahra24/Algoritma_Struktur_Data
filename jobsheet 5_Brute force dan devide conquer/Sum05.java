@@ -1,6 +1,6 @@
-public class Sum {
+public class Sum05 {
     double keuntungan[]; 
-    public Sum(int el) {
+    public Sum05(int el) {
         keuntungan = new double[el];
     }
 

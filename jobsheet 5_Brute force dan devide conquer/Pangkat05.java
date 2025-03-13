@@ -1,8 +1,8 @@
-public class Pangkat {
+public class Pangkat05 {
 
     int nilai, pangkat ;
     
-    Pangkat (int n, int p) {
+    Pangkat05 (int n, int p) {
         nilai = n;
         pangkat = p;
     }
