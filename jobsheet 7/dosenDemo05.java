@@ -27,7 +27,7 @@ public class dosenDemo05 {
         System.out.println("Pencarian Data dengan Sequential Search");
         System.out.print("Masukkan Nama yang dicari: ");
         String cari = input05.nextLine();
-
+        
         int posisi = data.pencarianDataSequential05(cari);
         data.tampilPosisi(cari, posisi);
         data.tampilDataSearch(cari, posisi);
