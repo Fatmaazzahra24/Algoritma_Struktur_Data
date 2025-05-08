@@ -28,7 +28,7 @@ public class Queue {
     }
     public void peek(){
         if (!isEmpty()) {
-            System.out.println("Elemen terdepan: " + data[front]);
+            System.out.println ("Elemen terdepan: " + data[front]);
         } else {
             System.out.println("Queue masih kosong! ");
         }
@@ -43,7 +43,7 @@ public class Queue {
                 i= (i+1)%max;
             }
             System.out.println(data[i] + " ");
-            System.out.println("Jumlah elemen: " + size);
+            System.out.print("Jumlah elemen: " + size);
         }
     }
 
@@ -60,6 +60,8 @@ public class Queue {
     public void Enqueue(int dt) {
         if (isFull()) {
             System.out.println("Queue sudah penuh! ");
+            System.out.println("Program dihentikan karena terjadi queue overflow.");
+            System.exit(1);//,menghentikan program
         } else {
             if (isEmpty()) {
                 front = rear = 0;
@@ -78,6 +80,8 @@ public class Queue {
         int dt=0;
         if(isEmpty()){
             System.out.println("Queue masih kosong! ");
+            System.out.println("Program dihentikan karena terjadi queue underflow.");
+            System.exit(1);//,menghentikan program
         } else {
             dt = data[front];
             size--;
