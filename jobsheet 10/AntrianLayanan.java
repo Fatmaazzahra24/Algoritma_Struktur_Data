@@ -54,7 +54,7 @@ public class AntrianLayanan {
                 System.out.println("NIM - NAMA - PRODI - KELAS");
                 for (int i =0; i < size; i++) {
                     int index = (front + i) % max;
-                    System.out.print((i+1) + ".  ");
+                    System.out.println((i+1) + ".  ");
                     data[index].tampilkanData();
                 }
             }
