@@ -70,5 +70,5 @@ public class SingleLinkedList05 {
                 tail = tmp.next;
             }
         }
-    }
+    } 
 }
