@@ -5,13 +5,14 @@ public class SingleLinkedList05 {
     boolean isEmpty() {
         return head == null;
     }
+
     public void print () {
         if (!isEmpty()) {
             NodeMahasiswa05 tmp = head;
             System.out.println("Isi Linked List:");
             System.out.printf("%-10s %-10s %-5s %-4s\n", "Nama", "NIM", "Kelas", "IPK");
             while (tmp != null) {
-                tmp.data.tampilInformasi();  
+                System.out.printf("%-10s %-10s %-5s %-4.2f\n", tmp.data.nama, tmp.data.nim, tmp.data.kelas, tmp.data.ipk);
                 tmp = tmp.next;
             }
             System.out.println();
@@ -19,7 +20,7 @@ public class SingleLinkedList05 {
             System.out.println("Linked list kosong!");
         }
     }
-    
+
     public void addFirst(Mahasiswa05 data) {
         NodeMahasiswa05 ndInput = new NodeMahasiswa05(data, null);
         if (isEmpty()) {
@@ -29,7 +30,8 @@ public class SingleLinkedList05 {
             ndInput.next = head;
             head = ndInput;
         }
-    } 
+    }
+
     public void addLast(Mahasiswa05 input) {
         NodeMahasiswa05 ndInput = new NodeMahasiswa05(input, null);
         if (isEmpty()) {
@@ -40,10 +42,11 @@ public class SingleLinkedList05 {
             tail = ndInput;
         }
     }
+
     public void insertAfter(String key, Mahasiswa05 input) {
         NodeMahasiswa05 ndInput = new NodeMahasiswa05(input, null);
         NodeMahasiswa05 tmp = head;
-        do { 
+        do {
             if (tmp.data.nama.equalsIgnoreCase(key)) {
                 ndInput.next = tmp.next;
                 tmp.next = ndInput;
@@ -51,11 +54,12 @@ public class SingleLinkedList05 {
                     tail = ndInput;
                 }
                 break;
-            } 
+            }
             tmp = tmp.next;
         } while (tmp != null);
     }
-    public void insertAt (int index,Mahasiswa05 input) {
+
+    public void insertAt(int index, Mahasiswa05 input) {
         if (index < 0) {
             System.out.println("Index salah!");
         } else if (index == 0) {
@@ -70,5 +74,88 @@ public class SingleLinkedList05 {
                 tail = tmp.next;
             }
         }
-    } 
+    }
+
+    public void getData(int index) {
+        NodeMahasiswa05 tmp = head;
+        for (int i = 0; i < index; i++) {
+            tmp = tmp.next;
+        }
+        tmp.data.tampilInformasi();
+    }
+
+    public int indexOf(String key) {
+        NodeMahasiswa05 tmp = head;
+        int index = 0;
+        while (tmp != null && !tmp.data.nama.equalsIgnoreCase(key)) {
+            tmp = tmp.next;
+            index++;
+        }
+        if (tmp == null) {
+            return -1;
+        } else {
+            return index;
+        }
+    }
+
+    public void removeFirst() {
+        if (isEmpty()) {
+            System.out.println("Linked list masih kosong, tidak dapat dihapus!");
+        } else if (head == tail) {
+            head = tail = null;
+        } else {
+            head = head.next;
+        }
+    }
+
+    public void removeLast() {
+        if (isEmpty()) {
+            System.out.println("Linked list masih kosong, tidak dapat dihapus!");
+        } else if (head == tail) {
+            head = tail = null;
+        } else {
+            NodeMahasiswa05 tmp = head;
+            while (tmp.next != tail) {
+                tmp = tmp.next;
+            }
+            tmp.next = null;
+            tail = tmp;
+        }
+    }
+
+    public void remove(String key) {
+        if (isEmpty()) {
+            System.out.println("Linked list masih kosong, tidak dapat dihapus!");
+        } else {
+            NodeMahasiswa05 tmp = head;
+            while (tmp != null) {
+                if ((tmp.data.nama.equalsIgnoreCase(key)) && (tmp == head)) {
+                    this.removeFirst();
+                    break;
+                } else if (tmp.next != null && tmp.next.data.nama.equalsIgnoreCase(key)) {
+                    tmp.next = tmp.next.next;
+                    if (tmp.next == null) {
+                        tail = tmp;
+                    }
+                    break;
+                }
+                tmp = tmp.next;
+            }
+        }
+    }
+
+    public void removeAt(int index) {
+        if (index == 0) {
+            removeFirst();
+        } else {
+            NodeMahasiswa05 tmp = head;
+            for (int i = 0; i < index - 1; i++) {
+                tmp = tmp.next;
+            }
+            tmp.next = tmp.next.next;
+            if (tmp.next == null) {
+                tail = tmp;
+            }
+        }
+    }
 }
