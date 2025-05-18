@@ -12,7 +12,7 @@ public class SingleLinkedList05 {
             System.out.println("Isi Linked List:");
             System.out.printf("%-10s %-10s %-5s %-4s\n", "Nama", "NIM", "Kelas", "IPK");
             while (tmp != null) {
-                System.out.printf("%-10s %-10s %-5s %-4.2f\n", tmp.data.nama, tmp.data.nim, tmp.data.kelas, tmp.data.ipk);
+                tmp.data.tampilInformasi();
                 tmp = tmp.next;
             }
             System.out.println();
